@@ -13,19 +13,19 @@ function changeSlide() {
 
 changeSlide();
 
-prev_btn.addEventListener('click', (e)=>{
-    if (n < 0) {
+prev_btn.addEventListener('click', (e) => {
+    if (n > 0) {
         n--;
-    }else{
+    } else {
         n = imgs.length - 1;
     }
     changeSlide();
 })
 
-next_btn.addEventListener('click', (e)=>{
+next_btn.addEventListener('click', (e) => {
     if (n < imgs.length - 1) {
         n++;
-    }else{
+    } else {
         n = 0;
     }
     changeSlide();

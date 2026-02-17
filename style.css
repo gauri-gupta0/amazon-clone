@@ -11,12 +11,14 @@
 
 
 body {
-    
     background: #dadada;
+    width: 100%;
+    overflow-x: hidden;
 }
+
 a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
 
 nav {
@@ -25,9 +27,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px, 20px;
+    padding: 10px 20px;
     color: #fff;
 }
+
 .nav-country {
     display: flex;
     align-items: end;
@@ -48,7 +51,7 @@ nav {
     align-items: center;
     margin-left: 15px;
     border-radius: 4px;
-    max-width: 1000px  ;
+    max-width: 1000px;
     color: gray;
     background: #fff;
     -webkit-border-radius: 4px;
@@ -62,7 +65,7 @@ nav {
     align-items: center;
     padding: 10px 20px;
     gap: 5px;
-    background:#e5e5e5;
+    background: #e5e5e5;
     border-radius: 5px 0 0 5px;
     -webkit-border-radius: 5px 0 0 5px;
     -moz-border-radius: 5px 0 0 5px;
@@ -89,7 +92,7 @@ nav {
 }
 
 .nav-language {
-    display:flex;
+    display: flex;
     align-items: center;
     gap: 2px;
     font-weight: 600;
@@ -98,20 +101,23 @@ nav {
 
 .nav-text {
     margin-left: 15px;
-    
+
 }
-.nav-text p{
+
+.nav-text p {
     font-size: 10px;
 }
 
-.nav-text h1{
+.nav-text h1 {
     font-size: 14px;
 }
+
 .nav-cart {
     display: flex;
     align-items: center;
-    margin-right: 0px 15px;
+    margin-right: 15px;
 }
+
 .nav-bottom {
     display: flex;
     align-items: center;
@@ -129,6 +135,7 @@ nav {
     cursor: pointer;
     font-weight: 600;
 }
+
 .header-slider ul {
     display: flex;
     overflow-y: hidden;
@@ -137,12 +144,13 @@ nav {
 .header-img {
     max-width: 100%;
     mask-image: linear-gradient(to bottom, #000000, transparent 100%);
-}  
+}
+
 .header-slider a {
     position: absolute;
     top: 20%;
     z-index: 1;
-    padding: 5vh 1vw; 
+    padding: 5vh 1vw;
     background: #ffffff4f;
     color: #0000007b;
     text-decoration: none;
@@ -208,6 +216,7 @@ nav {
 .products-slider .products::-webkit-scrollbar {
     display: none;
 }
+
 .products-slider-with-price {
     background: #fff;
     margin: 0 30px;
@@ -221,9 +230,11 @@ nav {
     gap: 10px;
     margin-top: 10px;
 }
+
 .products-slider-with-price .products::-webkit-scrollbar {
     display: none;
 }
+
 .product-card {
     display: flex;
     flex-direction: column;
@@ -257,6 +268,7 @@ nav {
     font-weight: 500;
     font-size: 12px;
 }
+
 .product-offer h1 {
     font-size: 14px;
     font-weight: 600;
@@ -275,7 +287,7 @@ nav {
     color: #525252;
 }
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,9 +295,137 @@ footer{
     color: #fff;
     padding: 20px 60px;
 }
+
 footer span {
     font-size: 24px;
     font-weight: 600;
     cursor: pointer;
-    color: #be0b3b
+    color: #be0b3b;
+}
+
+/* --- Responsive Design & Improvements --- */
+
+/* Tablet & Mobile Layout for Product Grid */
+@media only screen and (max-width: 900px) {
+    .nav-search {
+        max-width: 500px;
+    }
+
+    .nav-text p {
+        display: none;
+    }
+
+    .box-col {
+        max-width: 48%;
+    }
+}
+
+/* Mobile Layout (<600px) */
+@media only screen and (max-width: 600px) {
+
+    nav {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .nav-search {
+        order: 2;
+        width: 100%;
+        margin: 10px 0;
+        max-width: 100%;
+    }
+
+    .nav-country,
+    .nav-language {
+        display: none;
+    }
+
+    .nav-text {
+        margin-left: 5px;
+    }
+
+    .nav-bottom {
+        font-size: 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 8px 10px;
+    }
+
+    .header-slider a {
+        top: 15%;
+        padding: 2vh 1vw;
+        font-size: 14px;
+    }
+
+    .header-box {
+        margin-top: -10vw;
+    }
+
+    .box-row {
+        margin: 10px;
+        gap: 10px;
+        justify-content: center;
+        /* Center cards on mobile */
+    }
+
+    .box-col {
+        max-width: 100%;
+        /* Full width cards on mobile */
+        margin-bottom: 10px;
+    }
+
+    .products-slider,
+    .products-slider-with-price {
+        margin: 0 10px 15px 10px;
+        padding: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+    }
+}
+
+/* --- Aesthetic Improvements --- */
+
+/* Smooth Transitions */
+a,
+.box-col,
+.product-card,
+.nav-search-icon {
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.box-col:hover,
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.box-col {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Better Scrollbar Styling */
+.products::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+}
+
+.products::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.products::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.nav-search:focus-within {
+    box-shadow: 0 0 0 2px #f90;
+    border-radius: 4px;
 }
